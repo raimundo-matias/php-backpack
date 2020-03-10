@@ -1,0 +1,4 @@
+.env
+app/*
+conf/apache/server*[.crt, .key]
+conf/apache/rootCA.crt
