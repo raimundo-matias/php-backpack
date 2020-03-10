@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  dp-apache:
+    build: 
+      context: ./conf/apache
+    image: dp-apache-ssl:1.0
+    container_name: dp-apache
+    environment:
+      - SERVER_NAME=${SSL_DOMAIN}
+    ports:
+      - "${UNSECURE_HOST_PORT}:80"
+      - "${SECURE_HOST_PORT}:443"
+    volumes: 
+      - ${APP_DIR}:/usr/local/apache2/htdocs
+
