@@ -14,3 +14,12 @@ services:
     volumes: 
       - ${APP_DIR}:/usr/local/apache2/htdocs
 
+  dp-php:
+    build:
+      context: ./conf/php
+    image: dp-php7.4-fpm:1.0
+    container_name: dp-php7.4-fpm
+    ports:
+      - "${XDEBUG_HOST_PORT}:9005"
+    volumes:
+      - "${APP_DIR}:"
