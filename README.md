@@ -2,11 +2,11 @@
 
 # [PHP backpack](https://github.com/raimundo-matias/php-backpack#readme.md)
 
-> Um ambiente de *desenvolvimento local* para aplicações PHP
+> Um ambiente de *desenvolvimento local* para aplicações PHP "do jeito certo"
 
 ## Características
 
-Este projeto provê um ambiente de **desenvolvimento local PHP** baseado em docker, contendo as seguintes tecnologias:
+Este projeto provê um ambiente de **desenvolvimento local PHP** baseado em **docker**, contendo as seguintes tecnologias:
 
 1. Servidor Web Apache 2.4
 2. Backend PHP-FPM 7.4
@@ -58,13 +58,13 @@ Além das tecnologias descritas, este projeto também disponibiliza a criação 
 
 5. Após a finalização do script, importe o arquivo `conf/apache/rootCA.crt` em seu navegador:
 
-    ### Firefox
+    ![Mozilla](https://simpleicons.org/icons/mozillafirefox.svg#thumbnail) Firefox
 
-    Menu -> `Preferências` -> `Privacidade e Segurança` -> `Visualizar Certificados` -> Aba: `Autoridades` -> Botão: `Importar`
+    `Menu` → `Preferências` → `Privacidade e Segurança` → `Visualizar Certificados` → `aba: Autoridades` → `botão: Importar`
 
-    ### Google Chrome
+    ![Google](https://simpleicons.org/icons/googlechrome.svg#thumbnail) Chrome
 
-    Menu -> `Configurações` -> `Privacidade e Segurança` -> Aba: `Autoridades` -> Botão: `Importar`
+    `Menu` → `Configurações` → `Privacidade e Segurança` → `Gerenciar Certificados` → `aba: Autoridades` → `botão: Importar`
 
 6. Execute o docker-compose e seja feliz!
 
@@ -78,6 +78,9 @@ I thank all the people in the technology community who shared their efforts and 
 
 In particular, I am grateful for the following references:
 
-- [Base concept's and initial's reference](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
+- [Base concept's and initial's reference for SSL](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
 - [SSL Automation](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
 - [Container httpd with SSL concept](https://github.com/InAnimaTe/docker-httpd-ssl)
+- [Container php-fpm with PHP Composer and XDebug](https://github.com/GaetanRole/php-docker-starter)
+
+<style>img[src*="#thumbnail"]{width:12.5px;height:12.5px;}</style>
