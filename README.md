@@ -14,13 +14,9 @@ Este projeto provê um ambiente de **desenvolvimento local PHP** baseado em dock
 4. XDebug
 5. PHP Composer
 
-Além das tecnologias descritas, este projeto também disponibiliza a criação de **ServerName** e **SSL auto-assinado** de forma automatizada, e, habilitada por padrão. Porém, para utilizar estes recursos, é necessário executar as seguintes ações:
+Além das tecnologias descritas, este projeto também disponibiliza a criação de **ServerName** e **SSL auto-assinado** de forma automatizada, e, habilitada por padrão no servidor web.
 
-1. Adicionar o domínio (`SSL_DOMAIN`), que foi definino no arquivo [`.env`](.env-example) ao arquivo hosts do seu S.O.
-
-2. Após finalizar o roteiro, adicionar o arquivo `conf/apache/rootCA.crt` no seu navegador, detalhes sobre como importar certificados de autoridade (CA) neste [post](https://matias.one/ssl-auto-assinado-com-CA).
-
-## Estrutura do projeto após execução do roteiro
+## Estrutura
 
 ```bash
 .
@@ -38,7 +34,7 @@ Além das tecnologias descritas, este projeto também disponibiliza a criação 
 └── README.md
 ```
 
-## Utilizando o projeto
+## Como utilizar este projeto
 
 1. Clone este projeto ;)
 
@@ -52,15 +48,25 @@ Além das tecnologias descritas, este projeto também disponibiliza a criação 
     cd php-backpack && cp env-example .env
     ```
 
-3. Altere o valor da variável `SSL_DOMAIN` do arquivo `.env` conforme desejar, e execute o arquivo de criação dos certificados
+3. Altere o valor da variável `SSL_DOMAIN` do arquivo `.env` conforme desejar, e, adicione este nome no arquivo hosts do seu sistema operacional
+
+4. Execute o arquivo de criação dos certificados
 
     ```bash
     source conf/apache/create-certs.sh
     ```
 
-    > Após a finalização do script, importe o arquivo `conf/apache/rootCA.crt` em seu navegador, mais detalhes [aqui](https://matias.one/ssl-auto-assinado-com-CA)
+5. Após a finalização do script, importe o arquivo `conf/apache/rootCA.crt` em seu navegador:
 
-4. Execute o docker-compose e seja feliz!
+    ### Firefox
+
+    Menu -> `Preferências` -> `Privacidade e Segurança` -> `Visualizar Certificados` -> Aba: `Autoridades` -> Botão: `Importar`
+
+    ### Google Chrome
+
+    Menu -> `Configurações` -> `Privacidade e Segurança` -> Aba: `Autoridades` -> Botão: `Importar`
+
+6. Execute o docker-compose e seja feliz!
 
     ```bash
     docker-compose up --build
