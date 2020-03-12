@@ -2,31 +2,31 @@
 
 # [PHP backpack](https://github.com/raimundo-matias/php-backpack#readme.md)
 
-> Um ambiente de *desenvolvimento local* para aplicações PHP "do jeito certo"
+> A *local development environment* for **PHP** applications **"the right way"**
 
-## Características
+## Project overview
 
-Este projeto provê um ambiente de **desenvolvimento local PHP** baseado em **docker**, contendo as seguintes tecnologias:
+This project provides a *local PHP development environment based on docker*, containing the following technologies:
 
-✓ Servidor Web Apache 2.4\
-✗ Backend PHP-FPM 7.4\
+✓ Apache 2.4\
+✗ PHP-FPM 7.4\
 ✗ PHP Composer\
 ✗ XDebug\
-✗ Banco de dados PostgreSQL 9.4
+✗ PostgreSQL 9.4
 
-Além das tecnologias descritas, este projeto também disponibiliza a criação de **ServerName** e **SSL auto-assinado** de forma automatizada, e, habilitada por padrão no servidor web.
+In addition to the technologies described, this project also provides the creation of domain name for local use (ServerName) and self-signed certificate **in an automated way**, and **enabled by default on the web server**.
 
-## Estrutura
+## Project structure after create ssl certificate
 
 ```bash
 .
 ├── app
-│   └── # DISPONIBILIZE SUA APLICAÇÃO AQUI
+│   └── # MAKE YOUR APPLICATION HERE
 ├── conf
 │   └── apache
 │       ├── server.crt
 │       ├── server.key
-│       ├── rootCA.crt # IMPORTE ESTE ARQUIVO EM SEU NAVEGADOR
+│       ├── rootCA.crt # IMPORT THIS FILE IN YOUR BROWSER
 │       └── Dockerfile
 ├── docker-compose.yml
 ├── .env-example
@@ -34,51 +34,51 @@ Além das tecnologias descritas, este projeto também disponibiliza a criação 
 └── README.md
 ```
 
-## Como utilizar este projeto
+## How to use this project
 
-1. Clone este projeto ;)
+1. Clone this project ;)
 
     ```bash
     git clone https://github.com/user/raimundo-matias/php-backpack
     ```
 
-2. Crie o arquivo de configuração de ambiente
+2. Create the environment configuration file
 
     ```bash
     cd php-backpack && cp env-example .env
     ```
 
-3. Altere o valor da variável `SSL_DOMAIN` do arquivo `.env` conforme desejar, e, adicione este nome no arquivo hosts do seu sistema operacional
+3. Change the value of the `SSL_DOMAIN` variable in the `.env` file as desired, and add this name to your operating system's hosts file
 
-4. Execute o arquivo de criação dos certificados
+4. Run the certificate creation file
 
     ```bash
     source conf/apache/create-certs.sh
     ```
 
-5. Após a finalização do script, importe o arquivo `conf/apache/rootCA.crt` em seu navegador:
+5. After the script is finished, import the `conf / apache / rootCA.crt` file into your browser
 
     <img alt="Mozilla" src="https://simpleicons.org/icons/mozillafirefox.svg" width="13px" /> Firefox
 
-    `Menu` ➔ `Preferências` ➔ `Privacidade e Segurança` ➔ `Visualizar Certificados` ➔ `aba: Autoridades` ➔ `botão: Importar`
+    `Menu` ➔ `Preferences` ➔ `Privacy and Security` ➔ `View Certificates` ➔ `tab: Authorities` ➔ `button: Import`
 
     <img alt="Google" src="https://simpleicons.org/icons/googlechrome.svg" width="13px" /> Chrome
 
-    `Menu` ➔ `Configurações` ➔ `Privacidade e Segurança` ➔ `Gerenciar Certificados` ➔ `aba: Autoridades` ➔ `botão: Importar`
+    `Menu` ➔ `Settings` ➔ `Privacy and security` ➔ `Manage certificates (in the more session)` ➔ `tab: Authorities` ➔ `button: Import`
 
-6. Execute o docker-compose e seja feliz!
+6. Run the docker-compose and be happy!
 
     ```bash
     docker-compose up --build
     ```
 
-## Créditos
+## Credits
 
 I thank all the people in the technology community who shared their efforts and knowledge so that I could do this job!
 
 In particular, I am grateful for the following references:
 
-- [Base concept's and initial's reference for SSL](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
-- [SSL Automation](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
-- [Container httpd with SSL concept](https://github.com/InAnimaTe/docker-httpd-ssl)
-- [Container php-fpm with PHP Composer and XDebug](https://github.com/GaetanRole/php-docker-starter)
+1. [base concept's and initial's reference for SSL](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
+2. [ssl automation](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
+3. [httpd container with SSL concept](https://github.com/InAnimaTe/docker-httpd-ssl)
+4. [php-fpm container with PHP Composer and XDebug](https://github.com/GaetanRole/php-docker-starter)
