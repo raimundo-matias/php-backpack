@@ -8,11 +8,11 @@
 
 Este projeto provê um ambiente de **desenvolvimento local PHP** baseado em **docker**, contendo as seguintes tecnologias:
 
-1. Servidor Web Apache 2.4
-2. Backend PHP-FPM 7.4
-3. Banco de dados PostgreSQL 9.4
-4. XDebug
-5. PHP Composer
+✓ Servidor Web Apache 2.4\
+✗ Backend PHP-FPM 7.4\
+✗ PHP Composer\
+✗ XDebug\
+✗ Banco de dados PostgreSQL 9.4
 
 Além das tecnologias descritas, este projeto também disponibiliza a criação de **ServerName** e **SSL auto-assinado** de forma automatizada, e, habilitada por padrão no servidor web.
 
@@ -58,13 +58,13 @@ Além das tecnologias descritas, este projeto também disponibiliza a criação 
 
 5. Após a finalização do script, importe o arquivo `conf/apache/rootCA.crt` em seu navegador:
 
-    ![Mozilla](https://simpleicons.org/icons/mozillafirefox.svg#thumbnail) Firefox
+    <img alt="Mozilla" src="https://simpleicons.org/icons/mozillafirefox.svg" width="13px" /> Firefox
 
-    `Menu` → `Preferências` → `Privacidade e Segurança` → `Visualizar Certificados` → `aba: Autoridades` → `botão: Importar`
+    `Menu` ➔ `Preferências` ➔ `Privacidade e Segurança` ➔ `Visualizar Certificados` ➔ `aba: Autoridades` ➔ `botão: Importar`
 
-    ![Google](https://simpleicons.org/icons/googlechrome.svg#thumbnail) Chrome
+    <img alt="Google" src="https://simpleicons.org/icons/googlechrome.svg" width="13px" /> Chrome
 
-    `Menu` → `Configurações` → `Privacidade e Segurança` → `Gerenciar Certificados` → `aba: Autoridades` → `botão: Importar`
+    `Menu` ➔ `Configurações` ➔ `Privacidade e Segurança` ➔ `Gerenciar Certificados` ➔ `aba: Autoridades` ➔ `botão: Importar`
 
 6. Execute o docker-compose e seja feliz!
 
@@ -82,5 +82,3 @@ In particular, I am grateful for the following references:
 - [SSL Automation](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
 - [Container httpd with SSL concept](https://github.com/InAnimaTe/docker-httpd-ssl)
 - [Container php-fpm with PHP Composer and XDebug](https://github.com/GaetanRole/php-docker-starter)
-
-<style>img[src*="#thumbnail"]{width:12.5px;height:12.5px;}</style>
