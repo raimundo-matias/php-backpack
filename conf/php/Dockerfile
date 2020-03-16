@@ -18,6 +18,8 @@ RUN     apk add --update --no-cache \
         zlib-dev \
         libzip-dev \
         ca-certificates \
+        postgresql-libs \
+        postgresql-dev \
         && apk add --no-cache --virtual .build-deps \
             $PHPIZE_DEPS \
             curl \
@@ -35,4 +37,4 @@ RUN     apk add --update --no-cache \
 # PHP config
 COPY    conf.d/php.ini /usr/local/etc/php
 COPY    conf.d/xdebug.ini /usr/local/etc/php/conf.d
-RUN     echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" >> /usr/local/etc/php/conf.d/xdebug.ini
+RUN     printf "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" >> /usr/local/etc/php/conf.d/xdebug.ini
