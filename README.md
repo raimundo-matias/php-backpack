@@ -9,9 +9,9 @@
 This project provides a *local PHP development environment based on docker*, containing the following technologies:
 
 ✓ Apache 2.4\
-✗ PHP-FPM 7.4\
-✗ PHP Composer\
-✗ XDebug\
+✓ PHP-FPM 7.4\
+✓ PHP Composer 1.9\
+✗ XDebug 2.9\
 ✗ PostgreSQL 9.4
 
 In addition to the technologies described, this project also provides the creation of domain name for local use (ServerName) and self-signed certificate **in an automated way**, and **enabled by default on the web server**.
