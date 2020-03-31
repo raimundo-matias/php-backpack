@@ -25,6 +25,6 @@ services:
     image: dp-php7.4-fpm:1.0
     container_name: dp-php
     ports:
-      - "${XDEBUG_HOST_PORT}:9005"
+      - "${XDEBUG_HOST_PORT}:9001"
     volumes:
       - "${APP_DIR}:/var/www/html:rw"
